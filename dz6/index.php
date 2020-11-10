@@ -11,6 +11,12 @@
     <h1>Домашняя задание №6.</h1>
 </header>
 <body>
+    <?php include __DIR__ . '/classes/GuestBook.php';
+
+    $guestbook = new GuestBook();
+    var_dump($guestbook);
+    ?>
+
 
 </body>
 </html>
