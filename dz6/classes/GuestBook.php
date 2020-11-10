@@ -9,6 +9,7 @@ class GuestBook {
     public function __construct($path)
     {
         $this->data = __DIR__ . '/../' . $path . '/guest_book.txt';
+        file($this->data);
     }
 
     //Метод getData() возвращает массив записей гостевой книги
