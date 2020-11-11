@@ -24,7 +24,7 @@ class GuestBook {
     //Метод append($text) добавляет новую запись к массиву записей
     public function append($text)
     {
-        $this->data[] = $text;
+        array_push($this->data, $text);
     }
 
     //Метод save() сохраняет массив в файл
