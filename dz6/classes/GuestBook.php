@@ -18,13 +18,13 @@ class GuestBook {
     //Метод getData() возвращает массив записей гостевой книги
     public function getData()
     {
-
+        return $this->data;
     }
 
     //Метод append($text) добавляет новую запись к массиву записей
     public function append($text)
     {
-
+        $this->data[] = $text;
     }
 
     //Метод save() сохраняет массив в файл
