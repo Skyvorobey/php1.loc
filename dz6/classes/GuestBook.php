@@ -24,13 +24,13 @@ class GuestBook {
     //Метод append($text) добавляет новую запись к массиву записей
     public function append($text)
     {
-        array_push($this->data, $text);
+        $this->data[] = $text;
     }
 
     //Метод save() сохраняет массив в файл
     public function save()
     {
-
+        file_put_contents($this->path, $this->data);
     }
 }
 
