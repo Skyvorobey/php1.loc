@@ -1,10 +1,8 @@
 <?php
-
-class GuestBook {
+include __DIR__ . '/TextFile.php';
+class GuestBook extends TextFile {
     //В конструктор передается путь до файла с данными гостевой книги, в нём же происходит чтение данных из ней (используйте защищенное свойство объекта для хранения данных)
 
-    //Данные
-    protected $data;
     protected $path; //путь
 
     public function __construct($path)
@@ -15,16 +13,10 @@ class GuestBook {
         $this->data = file($this->path);
     }
 
-    //Метод getData() возвращает массив записей гостевой книги
-    public function getData()
-    {
-        return $this->data;
-    }
-
-    //Метод append($text) добавляет новую запись к массиву записей
+//Метод append($text) добавляет новую запись к массиву записей
     public function append($text)
     {
-        $this->data[] = $text;
+        $this->data[] = "\n" . $text;
     }
 
     //Метод save() сохраняет массив в файл
@@ -32,6 +24,7 @@ class GuestBook {
     {
         file_put_contents($this->path, $this->data);
     }
+
 }
 
 
