@@ -1,5 +1,4 @@
 <?php
-
     if (getCurrentUser() !== null) {
         if (isset($_FILES['file_name'])) {
             $file_weight = $_FILES['file_name']['size'];

@@ -4,12 +4,12 @@
         $guestbook = new GuestBook(__DIR__ . '/data/guest_book.txt');
 
         foreach ($guestbook->getData() as $value) {
-        $guest_value = explode(',', $value);
+        $record = explode(',', $value);
         ?>
 
     <div style="border: 1px solid #ccc; padding: 15px;">
-        <b><?php echo $guest_value['0']; ?></b> <?php echo $guest_value['1']; ?>
-        <div style="font-style: italic;"><?php echo $guest_value['2']; ?></div>
+        <b><?php echo $record['0']; ?></b> <?php echo $record['1']; ?>
+        <div style="font-style: italic;"><?php echo $record['2']; ?></div>
     </div>
     <?php
     }

@@ -1,6 +1,4 @@
 <?php
-
-/* Функция угадывающая пол по имени */
 function guesser_the_name($name) {
     $male = ' - имя мужское';
     $female = ' - имя женское';
@@ -73,10 +71,7 @@ switch ($name) {
         break;
     }
 }
-/*Запуск функции*/
-//echo guesser_the_name('Дарья');
 
-/*тесты функции*/
 assert('Мария - имя женское' == guesser_the_name('Мария'));
 assert('Евгений - имя мужское' == guesser_the_name('Евгений'));
 

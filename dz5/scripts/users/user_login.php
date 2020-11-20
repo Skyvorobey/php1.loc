@@ -1,5 +1,4 @@
 <?php
-
 include __DIR__ . '/user_verification.php';
 
 if (isset($_POST['login']) && isset($_POST['password'])) {

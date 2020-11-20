@@ -1,5 +1,4 @@
 <?php
-
 function seeGuest($array) {
     while (!feof($array)) {
         $str = fgets($array);
@@ -7,5 +6,4 @@ function seeGuest($array) {
     }
     fclose($array);
 }
-
 ?>

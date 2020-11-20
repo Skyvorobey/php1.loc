@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_FILES['file_name'])) {
     $file_weight = $_FILES['file_name']['size'];
     $file_original_name = $_FILES['file_name']['name'];
@@ -22,10 +21,7 @@ if (isset($_FILES['file_name'])) {
         echo 'Формат загружаемых файлов должен быть jpeg или png!';
     }
 }
-
 ?>
-<br>
-<a href="/dz4/index.php">Вернуться назад</a>
 
 
 
