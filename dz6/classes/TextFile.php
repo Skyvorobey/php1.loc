@@ -2,9 +2,8 @@
 
 class TextFile
 {
-    protected $data; //Данные
+    protected $data;
 
-    //Метод getData() возвращает массив
     public function getData()
     {
         return $this->data;
