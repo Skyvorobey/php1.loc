@@ -19,7 +19,7 @@ class Uploader extends TextFile
     //Метод upload() осуществляет перенос файла (если он был загружен!) из временного места в постоянное
    public function upload() {
         if ($this->isUploaded()) {
-            move_uploaded_file($_FILES[$this->data]['tmp_name'], __DIR__ . '/images' . $_FILES[$this->data]['name']);
+            move_uploaded_file($_FILES[$this->data]['tmp_name'], __DIR__ . '/images/' . $_FILES[$this->data]['name']);
         }
     }
 }
