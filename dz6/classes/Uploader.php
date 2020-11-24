@@ -25,7 +25,7 @@ class Uploader
         if ($this->isUploaded() === true) {
            if (isset($_FILES[$this->file_img])) {
                move_uploaded_file($_FILES[$this->file_img]['tmp_name'],
-                   __DIR__ . '/images/' . $_FILES[$this->file_img]['name'] );
+                   __DIR__ . '/../images/' . $_FILES[$this->file_img]['name'] );
             }
         }
     }
