@@ -2,7 +2,7 @@
 include __DIR__ . '/TextFile.php';
 class GuestBook extends TextFile {
 
-    protected $path; //путь
+    protected $path;
 
     public function __construct($path)
     {
