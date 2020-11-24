@@ -28,12 +28,18 @@
         ?>
     </div>
 
-    <?php include __DIR__ . '/classes/Uploader.php';
-    $uploader = new Uploader();
-    $uploader->upload()?>
-
+    <?php include __DIR__ . '/classes/Uploader.php';?>
     <form action="/dz6/index.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="file_name">
+        <input type="file" name="file_img">
         <input type="submit" name="submit" value="Загрузить">
     </form>
+    <?php
+    if (isset($_FILES['file_img'])) {
+        $uploader = new Uploader('file_img');
+        $uploader->upload();
+        $uploader->isUploaded();
+        var_dump($uploader);
+        var_dump($uploader->file_img);
+    }
+            ?>
 </div>
