@@ -38,8 +38,6 @@
         $uploader = new Uploader('file_img');
         $uploader->upload();
         $uploader->isUploaded();
-        var_dump($uploader);
-        var_dump($uploader->file_img);
     }
-            ?>
+    ?>
 </div>
