@@ -9,11 +9,12 @@ class Uploader
     }
 
     public function isUploaded() {
+        $files = $_FILES[$this->file_img];
 
-        if (isset(($_FILES[$this->file_img]))) {
-            if ((0 === $_FILES[$this->file_img]['error']) &&
-            (('image/png' === $_FILES[$this->file_img]['type']) ||
-                'image/jpeg' === $_FILES[$this->file_img]['type']))  {
+        if (isset($files)) {
+            if ((0 === $files['error']) &&
+            (('image/png' === $files['type']) ||
+                'image/jpeg' === $files['type']))  {
             return true;
         }   else
             echo 'Досупные форматы для загрузки "png" и "jpeg" ';
@@ -23,9 +24,15 @@ class Uploader
 
     public function upload() {
         if ($this->isUploaded() === true) {
-           if (isset($_FILES[$this->file_img])) {
-               move_uploaded_file($_FILES[$this->file_img]['tmp_name'],
-                   __DIR__ . '/../images/' . $_FILES[$this->file_img]['name'] );
+            $files = $_FILES[$this->file_img];
+           if (isset($files)) {
+               move_uploaded_file($files['tmp_name'],
+                   __DIR__ . '/../images/' . $files['name'] );
+
+               $host  = $_SERVER['HTTP_HOST'];
+               $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+               $extra = 'index.php';
+               header("Location: http://$host$uri/$extra");
             }
         }
     }
