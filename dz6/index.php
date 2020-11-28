@@ -36,8 +36,8 @@
     <?php
     if (isset($_FILES['file_img'])) {
         $uploader = new Uploader('file_img');
-        $uploader->upload();
         $uploader->isUploaded();
+        $uploader->upload();
     }
     ?>
 </div>
