@@ -4,9 +4,9 @@ if (isset ($_POST['submit'])) {
         $file = fopen(__DIR__ . '/../../data/guest_book.txt', 'a');
         $new_r = ($_POST['new_rec']);
         fwrite($file, date('d.m.Y H:i:s', time())) .
-        fwrite($file, ',') .
+        fwrite($file, ', ') .
         fwrite($file, $new_r) .
-        fwrite($file, "\n");
+        fwrite($file, '; ') .
         fclose($file);
 
         $host  = $_SERVER['HTTP_HOST'];
