@@ -1,9 +1,5 @@
 <?php
-function returnsFile($thisFile) {
-    while (!feof($thisFile)) {
-        $str = fgets($thisFile);
-        echo $str;
-    }
-    fclose($thisFile);
+function return_file($thisFile) {
+    return file_get_contents(__DIR__ . '/../../' . $thisFile);
 }
 ?>
